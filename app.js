@@ -5,7 +5,6 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const app = express();
 
-console.log(process.env.PASSWORD);
 const uri = `mongodb+srv://mtigrini:${process.env.PASSWORD}@anmaker.q1baume.mongodb.net/?retryWrites=true&w=majority`;
 
 app.use(bodyParser.json());
