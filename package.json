@@ -1,0 +1,22 @@
+{
+  "name": "anmaker-backend",
+  "version": "1.0.0",
+  "description": "Backend for anmaker",
+  "main": "app.js",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "cors": "^2.8.5",
+    "express": "^4.16.3",
+    "mongodb": "^4.12.1",
+    "mongoose": "^6.7.3",
+    "morgan": "^1.10.0"
+  },
+  "engines": {
+    "node": ">=14"
+  }
+}
