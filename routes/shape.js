@@ -12,7 +12,7 @@ router.get('/shapes', async (req, res, next) => {
 
 router.get('/shape/:name', async (req, res, next) => {
   console.log(req.params.name);
-  ShapeModel.findOne({ shapeName: req.params.name }, (err, shape) => {
+  ShapeModel.find({ shapeName: req.params.name }, (err, shape) => {
     if (err) {
       res.status(500).json({
         success: false,
