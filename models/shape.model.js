@@ -2,8 +2,8 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const CoordinatesSchema = new Schema({
-  x: { type: number, required: true },
-  y: { type: number, required: true },
+  x: { type: Number, required: true },
+  y: { type: Number, required: true },
 });
 
 const ShapeInfoSchema = new Schema({
