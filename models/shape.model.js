@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const CoordinatesSchema = new Schema({
   x: { type: Number, required: true },
   y: { type: Number, required: true },
-});
+}); 
 
 const ShapeInfoSchema = new Schema({
   name: {
