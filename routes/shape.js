@@ -11,8 +11,7 @@ router.get('/shapes', async (req, res, next) => {
 });
 
 router.get('/shape/:name', async (req, res, next) => {
-  console.log(req.params.name);
-  ShapeModel.find({ shapeName: req.params.name }, (err, shape) => {
+  ShapeModel.findOne({ shapeName: req.params.name }, (err, shape) => {
     if (err) {
       res.status(500).json({
         success: false,
@@ -36,13 +35,13 @@ router.get('/shape/:name', async (req, res, next) => {
   });
 });
 
-router.get('/shape/:id', async (req, res, next) => {
-  // TOOD
-  res.json({
-    success: true,
-    message: `Successfully fetched shape ${req.params.id}`,
-  });
-});
+// router.get('/shape/:id', async (req, res, next) => {
+//   // TOOD
+//   res.json({
+//     success: true,
+//     message: `Successfully fetched shape ${req.params.id}`,
+//   });
+// });
 
 router.post('/shape', async (req, res, next) => {
   // TODO
