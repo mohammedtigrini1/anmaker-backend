@@ -2,7 +2,7 @@ const router = require("express").Router();
 const { checkJWT } = require("../middlewares/check-jwt");
 const ShapeModel = require("../models/shape.model");
 
-router.get('/shapes', checkJWT, async (req, res, next) => {
+router.get('/shapes', async (req, res, next) => {
   // TODO
   res.json({
     success: true,
@@ -10,7 +10,7 @@ router.get('/shapes', checkJWT, async (req, res, next) => {
   });
 });
 
-router.get('/shape/:name', checkJWT, async (req, res, next) => {
+router.get('/shape/:name', async (req, res, next) => {
   console.log(req.params.name);
   ShapeModel.find({ shapeName: req.params.name }, (err, shape) => {
     if (err) {
