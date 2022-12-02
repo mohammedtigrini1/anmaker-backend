@@ -12,8 +12,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(morgan("dev"));
 app.use(cors());
 
-const health = require("./routes/health");
-app.use("/", health);
+const healthRoutes = require("./routes/health");
+const shapeRoutes = require("./routes/shape");
+app.use("/", healthRoutes);
+app.use("/", shapeRoutes);
 
 mongoose.connect(uri, { useNewUrlParser: true }, err => {
   if (err) {
