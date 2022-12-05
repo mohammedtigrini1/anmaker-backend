@@ -23,7 +23,7 @@ router.get('/shape/:name', async (req, res, next) => {
     if (!shape) {
       res.status(404).json({
         success: false,
-        message: `Shape "${req.params.name}" does not exist`,
+        message: `Shape ${req.params.name} does not exist`,
       });
       return;
     }
