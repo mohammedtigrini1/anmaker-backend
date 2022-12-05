@@ -11,11 +11,12 @@ router.get('/shapes', async (req, res, next) => {
 });
 
 router.get('/shape/:name', async (req, res, next) => {
-  ShapeModel.findOne({ shapeName: req.params.name }, (err, shape) => {
+  console.log(req.param.name);
+  ShapeModel.findOne({ shapeName: req.param.name }, (err, shape) => {
     if (err) {
       res.status(500).json({
         success: false,
-        message: `Failed to get shape ${req.params.name}.`,
+        message: `Failed to get shape ${req.param.name}.`,
       });
       return;
     }
@@ -23,7 +24,7 @@ router.get('/shape/:name', async (req, res, next) => {
     if (!shape) {
       res.status(404).json({
         success: false,
-        message: `Shape ${req.params.name} does not exist`,
+        message: `Shape ${req.param.name} does not exist`,
       });
       return;
     }
