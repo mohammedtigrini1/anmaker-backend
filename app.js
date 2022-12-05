@@ -7,6 +7,7 @@ const app = express();
 
 const uri = `mongodb+srv://mtigrini:${process.env.PASSWORD}@anmaker.q1baume.mongodb.net/anmaker?retryWrites=true&w=majority`;
 
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(morgan("dev"));
