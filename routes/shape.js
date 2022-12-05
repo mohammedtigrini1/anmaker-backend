@@ -11,8 +11,8 @@ router.get('/shapes', async (req, res, next) => {
 });
 
 router.get('/shape/:name', async (req, res, next) => {
-  let name = req.params.name.replate("\"", "");
-  console.log(name);
+  let name = req.params.name.replace("\"", "");
+  console.log(`shape ${name}`);
   ShapeModel.findOne({ shapeName: name }, (err, shape) => {
     if (err) {
       res.status(500).json({
